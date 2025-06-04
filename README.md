@@ -18,7 +18,7 @@ This is a REST API for managing a restaurant, built with Express.js and MySQL. I
 1.  **Clone the repository:**
 
     ```bash
-    git clone <https://github.com/adams1864/Restaurant-API/tree/main>
+    git clone https://github.com/adams1864/Restaurant-API/tree/main
     ```
 
 2.  **Install dependencies:**
