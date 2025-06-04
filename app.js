@@ -2,7 +2,9 @@
 const express = require('express');
 const cors = require('cors');
 const authRoutes = require('./routes/auth.routes');
-const menuRoutes = require('./routes/menu.routes'); // Import menu routes
+const menuRoutes = require('./routes/menu.routes');
+const orderRoutes = require('./routes/order.routes');
+const bookingRoutes = require('./routes/booking.routes'); // Import booking routes
 const { authenticate, authorize } = require('./middleware/auth.middleware');
 
 const app = express();
@@ -10,7 +12,9 @@ app.use(cors());
 app.use(express.json());
 
 app.use('/api/auth', authRoutes);
-app.use('/api/menus', menuRoutes); // Mount menu routes
+app.use('/api/menus', menuRoutes);
+app.use('/api/orders', orderRoutes);
+app.use('/api/bookings', bookingRoutes); // Mount booking routes
 
 // Test route - requires admin role
 app.get('/api/admin', authenticate, authorize(['admin']), (req, res) => {
